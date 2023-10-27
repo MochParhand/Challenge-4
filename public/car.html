@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>mulai sewa</title>
+</head>
+<style>
+    .search {
+      margin: 0px 61px;
+      position: relative;
+      padding: 24px;
+      transform: translateY(-35%);
+      background: var(--neutral-01, #fff);
+    }
+    label {
+      font-family: "Rubik", sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 18px;
+    }
+    input::placeholder {
+      color: var(--neutral-03, #8a8a8a);
+
+      font-family: Helvetica;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 18px;
+    }
+    option,
+    .form-select {
+      color: var(--neutral-04, #3c3c3c);
+      padding: 9px 12px;
+      font-family: Helvetica;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 18px;
+    }
+  </style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
+        <div class="container">
+            <a href="" class="navbar-brand"></a>
+
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+            >
+            <span class="navbar-toggler-icon"> 
+            </span>
+            </button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" style="display: inline; width: 60vw;"
+            aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">BCR</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="navitem">
+                            <a href="#Services" class="nav-link">Our Services</a>
+                        </li>
+                        <li class="navitem">
+                            <a href="#why" class="nav-link">Why Us</a>
+                        </li>   
+                        <li class="navitem">
+                            <a href="#Testimonial" class="nav-link">Testimonial</a>
+                        </li>
+                        <li class="navitem">
+                            <a href="#FAQ" class="nav-link">FAQ</a>
+                        </li>
+                        <li class="navitem">
+                            <a href="#testimonial" class="nav-link"><button class="btn btn-success btn-sm">Register</button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+<!-- Header -->
+<section class="header">
+    <div class="d-sm-flex d-sm-block">
+        <div class="row justify-content-lg-center align-items-center h-200 ms-auto">
+            <div class="col-8">
+                <div class="text-header">
+                    <h1>
+                        Sewa & Rental Mobil Terbaik di Kawasan (Lokasimu)
+                    </h1>
+                    <p>Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas
+                        terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.
+                    </p>
+                    <a href="public/index.example.html"></a><button class="btn btn-success btn-sm">Mulai Sewa Mobil</button>
+                </div>  
+            </div>
+        </div>
+        <img class="img-fluid img-header" 
+        src="image/img_car.png" 
+        alt="header">
+    </div>
+</section>
+
+<!-- Car Search -->
+<section class="">
+    <div class="search row rounded-2 d-flex gap-3 shadow justify-content-between">
+      <div class="col inputDriver">
+        <label class="pb-1">Tipe Driver</label>
+        <select class="form-select " id="driver">
+          <option value="" hidden>Pilih Tipe Driver</option>
+          <option value="true">Dengan Supir</option>
+          <option value="false">Tanpa Supir(Lepas Kunci)</option>
+        </select>
+      </div>
+      <div class="col inputDate">
+        <label class="pb-1">Tanggal</label>
+        <input type="text" class="form-control" id="date" placeholder="Pilih Tanggal" onfocus="(this.type = 'date')">
+      </div>
+      <div class="col inputTime">
+        <label class="pb-1">Waktu Jemput/Ambil</label>
+        <input type="text" id="time" placeholder="Pilih Waktu" class="form-control" onfocus="(this.type = 'time')" required>
+      </div>
+      <div class="col inputPassanger">
+        <label for="pb-1">Jumlah Penumpang</label>
+        <input type="number" id="passanger" class="form-control" placeholder="Jumlah Penumpang">
+      </div>
+      <div class="align-self-end" style="width: fit-content;">
+        <button class="btn btn-primary" type="button" id="load-btn" style="height: 38px">
+          Cari Mobil
+        </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row row-cols-auto row-gap-3 column-gap-3 justify-content-start" id="cars-container">
+        <!-- list mobil -->
+      </div>
+    </div>
+
+<section class="footer">
+    <footer class="pt-2 text-dark position-relative">
+        <div class="container">
+            <div class="d-sm-flex d-sm-block">
+                <div class="text-footer1">
+                        <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+                        <p>binarcarrental@gmail.com</p>
+                        <p>081-233-334-808</p>
+                </div>
+                <div class="text-footer2">
+                    <p>Our services</p>
+                    <p>Why Us</p>
+                    <p>Testimonial</p>
+                    <p>FAQ</p>
+                </div>
+                <div class="text-footer3 ">
+                    <p>Connect with us</p>
+                    <p>
+                        <img src="image/icon_facebook.png" alt="">
+                        <img src="image/icon_instagram.png" alt="">
+                        <img src="image/icon_mail.png" alt="">
+                        <img src="image/icon_twitch.png" alt="">
+                        <img src="image/icon_twitter.png" alt="">
+                    </p>
+                </div>
+                <div class="text-footer4">
+                    <p>Copyright binar 2023</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+
+
+    <!-- Example Javascript -->
+    <script type="text/javascript" src="./scripts/binar.js"></script>
+    <script type="text/javascript" src="./scripts/app.example.js"></script>
+    <script type="text/javascript" src="./scripts/car.example.js"></script>
+    <script type="text/javascript" src="./scripts/main.example.js"></script>
